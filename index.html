@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Underdark Hexcrawl</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="toolbar">
+        <h1>Underdark Hexcrawl</h1>
+        <p id="seed-label"></p>
+      </header>
+      <canvas id="hexmap" width="1200" height="900" aria-label="Hex map"></canvas>
+      <div id="context-menu" class="context-menu hidden" role="menu">
+        <button id="toggle-symbols" type="button"></button>
+        <button id="export-png" type="button">Export as PNG</button>
+        <button id="new-map" type="button">Generate new map</button>
+      </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

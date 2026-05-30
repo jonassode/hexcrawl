@@ -1,0 +1,86 @@
+:root {
+  color-scheme: dark;
+  --bg: #131012;
+  --surface: #1e1a1d;
+  --paper: #d8d3c4;
+  --grid: #6f6962;
+  --text: #d3ccbc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at center, #261f22 0%, var(--bg) 60%);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+}
+
+.app {
+  width: min(96vw, 1200px);
+  position: relative;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 0 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  color: #e8ddc6;
+}
+
+#seed-label {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+#hexmap {
+  width: 100%;
+  border: 1px solid #3c3538;
+  border-radius: 4px;
+  background: var(--paper);
+  box-shadow: 0 12px 35px rgb(0 0 0 / 45%);
+}
+
+.context-menu {
+  position: absolute;
+  min-width: 190px;
+  background: #211d20;
+  border: 1px solid #4f474b;
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow: 0 10px 24px rgb(0 0 0 / 40%);
+  z-index: 20;
+}
+
+.context-menu button {
+  width: 100%;
+  display: block;
+  border: 0;
+  color: #e0d7c2;
+  background: transparent;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.context-menu button:hover {
+  background: #3a3338;
+}
+
+.hidden {
+  display: none;
+}
