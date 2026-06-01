@@ -12,7 +12,7 @@
   const center = { x: canvas.width / 2, y: canvas.height / 2 };
 
   const biomes = [
-    { name: "Ruins", symbol: "⌖" },
+    { name: "Ruins", symbol: "🏛️" },
     { name: "Lake", symbol: "≈" },
     { name: "River", symbol: "∿" },
     { name: "Settlement (small)", symbol: "◍" },
