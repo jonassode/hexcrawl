@@ -131,6 +131,42 @@
     ctx.closePath();
   }
 
+  function drawRuinsSymbol(x, y) {
+    ctx.save();
+    ctx.fillStyle = "#111";
+
+    ctx.beginPath();
+    ctx.moveTo(x - 16, y + 13);
+    ctx.lineTo(x + 16, y + 13);
+    ctx.lineTo(x + 12, y + 9);
+    ctx.lineTo(x - 13, y + 9);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillRect(x - 13, y - 4, 6, 14);
+    ctx.fillRect(x + 7, y - 4, 6, 14);
+    ctx.fillRect(x - 2, y + 2, 4, 8);
+
+    ctx.beginPath();
+    ctx.moveTo(x - 15, y - 6);
+    ctx.lineTo(x - 8, y - 12);
+    ctx.lineTo(x - 2, y - 8);
+    ctx.lineTo(x + 3, y - 11);
+    ctx.lineTo(x + 9, y - 7);
+    ctx.lineTo(x + 15, y - 10);
+    ctx.lineTo(x + 15, y - 4);
+    ctx.lineTo(x - 15, y - 4);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = "#d8d3c4";
+    ctx.fillRect(x - 5, y - 10, 6, 6);
+    ctx.fillRect(x - 7, y - 2, 2, 10);
+    ctx.fillRect(x + 5, y - 2, 2, 10);
+    ctx.fillRect(x - 1, y + 4, 2, 6);
+    ctx.restore();
+  }
+
   function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#d8d3c4";
@@ -144,11 +180,15 @@
       ctx.stroke();
       if (showSymbols) {
         ctx.setLineDash([]);
-        ctx.fillStyle = "#111";
-        ctx.font = hex.biome.name === "Home" ? "bold 22px serif" : "20px serif";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillText(hex.biome.symbol, hex.x, hex.y);
+        if (hex.biome.name === "Ruins") {
+          drawRuinsSymbol(hex.x, hex.y);
+        } else {
+          ctx.fillStyle = "#111";
+          ctx.font = hex.biome.name === "Home" ? "bold 22px serif" : "20px serif";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText(hex.biome.symbol, hex.x, hex.y);
+        }
       }
     }
     ctx.setLineDash([]);
